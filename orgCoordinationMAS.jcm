@@ -1,0 +1,42 @@
+/* 
+    orgCoordinationMAS
+    ---------------------------
+
+    JaCaMo Project File
+    
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+    
+    (see jacamo/doc/jcm.html for more information about what can be defined in this file)
+    
+    JaCaMo <VERSION>
+    <DATE>
+*/
+
+mas orgCoordinationMAS {
+
+   agent bob     : auctioneer.asl
+
+    agent alice   : participant.asl
+    agent maria   : participant.asl
+    agent francois: participant.asl
+    agent giacomo : participant.asl
+
+    organisation aorg : auction_os.xml {
+        group agrp : auctionGroup {
+            players: bob      auctioneer
+                     alice    participant
+                     maria    participant
+                     francois participant
+                     giacomo  participant
+            debug
+        }
+    }
+    
+    // agent source path
+    asl-path: src/agt
+              src/agt/inc
+
+    
+    
+}
+
